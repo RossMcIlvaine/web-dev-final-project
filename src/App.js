@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import * as Env from './environments';
+import Parse from 'parse';
+
+Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
+Parse.serverURL = Env.SERVER_URL;
 
 function App() {
   return (
