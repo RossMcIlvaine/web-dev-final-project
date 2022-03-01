@@ -8,6 +8,8 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
+import WorkoutModule from "./Workout/Main.js";
+
 
 const Components = () => {
   return (
@@ -19,7 +21,8 @@ const Components = () => {
           <Route path="/register" component={Register} />
           <Redirect to="/" />
         </Switch>
-    </Router>
+      </Router>
+      <WorkoutModule />
     </div>
   );
 };
