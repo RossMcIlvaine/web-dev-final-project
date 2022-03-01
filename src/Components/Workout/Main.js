@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import getAllWorkouts from "../../Common/Services/Service";
-import Child from "./Child";
+import WorkoutTable from "./WorkoutTable";
+import WorkoutForm from "./WorkoutForm";
 
-const MainModule = () => {
+const WorkoutModule = () => {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
@@ -14,9 +15,10 @@ const MainModule = () => {
   return (
     <div>
       <p>This is the main module</p>
-      <Child workouts={workouts}/>
+      <WorkoutTable workouts={workouts}/>
+      <WorkoutForm/>
     </div>
   );
 };
 
-export default MainModule;
+export default WorkoutModule;

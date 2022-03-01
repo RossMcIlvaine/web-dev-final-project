@@ -1,10 +1,11 @@
 import React from "react";
-import MainModule from "./Main/Main.js";
+import WorkoutModule from "./Workout/Main.js";
+
 
 const Components = () => {
   return (
     <div>
-      <MainModule />
+      <WorkoutModule />
     </div>
   );
 };
