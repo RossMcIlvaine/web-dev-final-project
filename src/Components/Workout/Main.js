@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import getAllWorkouts from "../../Common/Services/Service";
 import WorkoutTable from "./WorkoutTable";
 import WorkoutForm from "./WorkoutForm";
+import '../../Common/css/workout.css';
 
 const WorkoutModule = () => {
   const [workouts, setWorkouts] = useState([]);
@@ -14,7 +15,6 @@ const WorkoutModule = () => {
   }, []);
   return (
     <div>
-      <p>This is the main module</p>
       <WorkoutTable workouts={workouts}/>
       <WorkoutForm/>
     </div>

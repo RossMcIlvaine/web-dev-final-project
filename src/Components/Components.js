@@ -1,6 +1,8 @@
 import React from "react";
 import Login from "./Login/Login.js";
 import Register from "./Register/Register.js";
+import WorkoutModule from "./Workout/Main.js";
+import Menubar from "./Menubar/Menubar.js";
 
 import {
   BrowserRouter as Router,
@@ -8,21 +10,20 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-import WorkoutModule from "./Workout/Main.js";
 
 
 const Components = () => {
   return (
     <div>
+      <Menubar />
       <Router>
         <Switch>
-          <Route path="/" exact component={Login} />
+          <Route path="/" exact component={WorkoutModule} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Redirect to="/" />
         </Switch>
       </Router>
-      <WorkoutModule />
     </div>
   );
 };

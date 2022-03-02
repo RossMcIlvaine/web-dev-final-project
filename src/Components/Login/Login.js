@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import '../../Common/css/login.css';
 
 const Login = () => {
     const history = useHistory();
@@ -9,7 +10,6 @@ const Login = () => {
 
     return (
         <div class="login">
-            <link rel="stylesheet" type="text/css" href="../../Common/css/login.css" />
             <form id="login">
                 <label for="email"><b>Email</b></label>
                 <input

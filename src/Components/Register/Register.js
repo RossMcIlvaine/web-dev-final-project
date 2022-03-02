@@ -1,15 +1,9 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import '../../Common/css/register.css';
 
 const Register = () => {
-    const history = useHistory();
-        const buttonHandler = () => {
-        history.push("/login");
-    };
-
     return (
         <div>
-            <link rel="stylesheet" type="text/css" href="../../Common/css/register.css" />
             <h1>Create an Account</h1>
             <div class="register">
             <form>
@@ -52,10 +46,10 @@ const Register = () => {
                 <hr />
                 <p class="subtext">
                     By creating an account you agree to our
-                    <a href="#">Terms &#38; Privacy</a>.
+                    <a href="#"> Terms &#38; Privacy</a>.
                 </p>
                 <button class="button" type="submit">Sign Up</button>
-                <button onClick={buttonHandler}>Already have an account?</button>
+                <p class="subtext">Already have an account?</p>
             </form>
             </div>
         </div>

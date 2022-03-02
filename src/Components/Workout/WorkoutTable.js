@@ -4,7 +4,7 @@ const WorkoutTable = ({ workouts }) => {
     <div>
         <h1 class="header">My Workouts</h1>
         <p class="filter">
-        <img src="images/Filter-Icon.png" class="filter" /> Filter
+        <img src="../../Common/images/Filter-Icon.png" class="filter" /> Filter
         </p>
         <table id="workouts">
         <tr>
@@ -13,26 +13,13 @@ const WorkoutTable = ({ workouts }) => {
             <th>Category</th>
         </tr>
 
-        {/* Add workout module */}
-        ${workouts.map(
+        {workouts.map(
             (workout) =>
-                <div>
-                        <span>
-                        {/* Using getter for workout Object to display name */}
-                        <li key={workout.id}>{workout.get("name")} | {workout.get("muscleGroup")}</li>
-                            <ul>
-                                {workout.get("exercises").map((exercise) => (
-                                    <li>{exercise}</li>
-                                ))}
-                            </ul>
-                        </span>
-                    </div>
-                // // Below is original version from Feature 3
-                // <tr key="${workout}">
-                //     <td>${workout.id}</td>
-                //     <td>${workout.name}</td>
-                //     <td>${workout.category}</td>
-                // </tr>
+            <tr key={workout}>
+                <td>{workout.id}</td>
+                <td>{workout.get("name")}</td>
+                <td>{workout.get("muscleGroup")}</td>
+            </tr>
         )}
         </table>
     </div>

@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito|Source+Sans+Pro");
+
+.header {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+}
+
+.subheader {
+  font-family: "Nunito", sans-serif;
+}
+
+.subtext {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.button {
+  border-radius: 4px;
+  margin: 4px 2px;
+  font-size: 14px;
+  background-color: #213282;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  border: none;
+  padding: 8px 25px;
+}
+
+.button:hover {
+  background: #3a53c2;
+}
+
+/* Styling to the workout table */
+#workouts {
+  font-family: "Source Sans Pro", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#workouts td,
+#workouts th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#workouts tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#workouts tr:hover {
+  background-color: #ddd;
+}
+
+#workouts th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #fcba03;
+  color: white;
+}
+
+img.filter {
+  max-width: 20px;
+  max-height: 20px;
+  float: right;
+  padding-left: 10px;
+}
+
+p.filter {
+  text-align: right;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.inputText {
+  height: 25\0px;
+  width: 300px;
+}
+
+.wrap-collabsible {
+  margin: 1.2rem 0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+  color: #ffffff;
+  background: #fcba03;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+  color: #ddd;
+}
+
+.lbl-toggle::before {
+  content: url(../../Common/images/Add.png);
+  font-size: 13px;
+  float: right;
+  color: white;
+  margin-left: 5px;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 500px;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+  background: #eee;
+  border-bottom: 1px solid #eee;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 0.5rem 1rem;
+}
+
+.collapsible-content p {
+  margin-bottom: 0;
+}
