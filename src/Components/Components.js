@@ -15,8 +15,8 @@ import {
 const Components = () => {
   return (
     <div>
-      <Menubar />
       <Router>
+        <Menubar />
         <Switch>
           <Route path="/" exact component={WorkoutModule} />
           <Route path="/login" component={Login} />
