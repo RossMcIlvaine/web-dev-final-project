@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import getAllWorkouts from "../../Common/Services/Service";
+import getAllWorkouts from "../../Common/Services/GetWorkout";
 import WorkoutTable from "./WorkoutTable";
 import WorkoutForm from "./WorkoutForm";
 import '../../Common/css/workout.css';
@@ -9,7 +9,7 @@ const WorkoutModule = () => {
 
   useEffect(() => {
     getAllWorkouts().then((workouts) => {
-      console.log(workouts);
+      // console.log(workouts);
       setWorkouts(workouts);
     });
   }, []);
