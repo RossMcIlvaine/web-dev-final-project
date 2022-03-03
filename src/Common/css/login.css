@@ -14,7 +14,7 @@ body {
   margin: auto;
   margin: 20 0 0 450px;
   padding: 90px;
-  background: #53B175;
+  background: #213282;
   border-radius: 15px;
 }
 
@@ -51,25 +51,10 @@ label {
   border: none;
   border-radius: 17px;
   padding-left: 7px;
-  color: #53B175;
+  color: #fcba03;
   background-color: white;
   font-weight: bold;
   font-size: 12px;
-}
-
-.back-button {
-  border-radius: 4px;
-  margin: 4px 2px;
-  font-size: 14px;
-  background-color: #53B175;
-  color: white;
-  font-family: "Nunito", sans-serif;
-  border: none;
-  padding: 8px 25px;
-}
-
-.back-button:hover {
-  background: #88D8A5;
 }
 
 .header {
