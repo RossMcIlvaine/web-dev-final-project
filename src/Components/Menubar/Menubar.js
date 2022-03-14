@@ -6,6 +6,7 @@ const Menubar = () => {
     return (
         <nav>
             <ul class="navigation">
+                {/* Make use of routing in navigation */}
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/exercises">Exercises</Link></li>
                 <li><Link to="/login">Login</Link></li>

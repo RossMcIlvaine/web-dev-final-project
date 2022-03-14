@@ -19,6 +19,8 @@ const Components = () => {
       <Router>
         <Menubar />
         <Switch>
+          {/* Routing added here, will be expanded with future components */}
+          {/* New tabs must also be added with new routing */}
           <Route path="/" exact component={WorkoutModule} />
           <Route path="/exercises" component={ExerciseModule} />
           <Route path="/login" component={Login} />

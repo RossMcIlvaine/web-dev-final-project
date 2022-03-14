@@ -5,6 +5,7 @@ import ExerciseTable from "./ExerciseTable";
 const ExerciseModule = () => {
   const [exercises, setExercises] = useState([]);
 
+  // call getAllExercises from service 
   useEffect(() => {
     getAllExercises().then((exercises) => {
       // console.log(exercises);
