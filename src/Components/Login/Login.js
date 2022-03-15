@@ -1,12 +1,7 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import '../../Common/css/login.css';
 
 const Login = () => {
-    const history = useHistory();
-        const buttonHandler = () => {
-        history.push("/register");
-    };
 
     return (
         <div>
@@ -34,8 +29,8 @@ const Login = () => {
                     />
                     <br /><br />
                     <hr />
-                    <button class="button" type="submit">Log In</button>
-                    <p class="subtext">Don't have an account?</p>
+                    <button class="loginButton" type="submit">Log In</button>
+                    <p class="loginSubtext">Don't have an account?</p>
                 </form>
             </div>
         </div>

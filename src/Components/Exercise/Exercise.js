@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import getAllExercises from "../../Common/Services/GetExercise";
 import ExerciseTable from "./ExerciseTable";
+import '../../Common/css/workout.css';
 
 const ExerciseModule = () => {
   const [exercises, setExercises] = useState([]);
@@ -8,7 +9,6 @@ const ExerciseModule = () => {
   // call getAllExercises from service 
   useEffect(() => {
     getAllExercises().then((exercises) => {
-      // console.log(exercises);
       setExercises(exercises);
     });
   }, []);

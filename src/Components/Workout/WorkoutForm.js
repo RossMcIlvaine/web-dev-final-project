@@ -1,5 +1,7 @@
 // Form adds new workouts to the list
 // Workouts will be stored on individual account basis and be sent to server
+// Future work will actually create a Workout and add it to database based on user input
+
 const workoutForm = () => {
   return (
     <div class="wrap-collabsible">
@@ -9,7 +11,7 @@ const workoutForm = () => {
         <div class="content-inner">
         <form>
         <p class="subheader">Workout Name</p>
-        <input type="text" placeholder="Workout Name" class="inputText"></input>
+        <input type="text" id="workoutName" placeholder="Workout Name" class="inputText"></input>
         <p class="subheader">Muscle Group</p>
         <select id="focus">
           <option id="full">Full Body</option>

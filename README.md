@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# CSE 40693 - Modern Web Development Group Project
+Group Members: Ross McIlvaine and Maggie Farrell
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

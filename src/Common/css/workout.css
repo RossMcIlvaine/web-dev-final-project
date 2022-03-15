@@ -61,8 +61,8 @@
 }
 
 img.filter {
-  max-width: 20px;
-  max-height: 20px;
+  width: 24px;
+  height: 24px;
   float: right;
   padding-left: 10px;
 }

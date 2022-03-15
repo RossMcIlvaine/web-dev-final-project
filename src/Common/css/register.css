@@ -9,7 +9,7 @@ body {
 
 .register {
   width: 382px;
-  height: 382px;
+  height: 360px;
   overflow: hidden;
   margin: auto;
   margin: 20 0 0 450px;
@@ -60,14 +60,14 @@ label {
   padding-left: 8px;
 }
 
-.button {
+.registerButton {
   width: 350px;
   height: 30px;
   border: none;
   border-radius: 17px;
   padding-left: 7px;
-  color: #fcba03;
-  background-color: white;
+  color: white;
+  background-color: #fcba03;
 }
 
 .header {
@@ -75,7 +75,7 @@ label {
   text-align: "center;"
 }
 
-.subtext {
+.registerSubtext {
   color: white;
   text-align: "center";
   font-family: "Source Sans Pro", sans-serif;

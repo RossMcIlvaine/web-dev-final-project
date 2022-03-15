@@ -45,14 +45,14 @@ label {
   padding-left: 8px;
 }
 
-.button {
+.loginButton {
   width: 350px;
   height: 30px;
   border: none;
   border-radius: 17px;
   padding-left: 7px;
-  color: #fcba03;
-  background-color: white;
+  color: white;
+  background-color: #fcba03;
   font-weight: bold;
   font-size: 12px;
 }
@@ -62,7 +62,7 @@ label {
   text-align: "center;"
 }
 
-.subtext {
+.loginSubtext {
   color: white;
   text-align: "center";
   font-family: "Source Sans Pro", sans-serif;

@@ -44,12 +44,8 @@ const Register = () => {
                 />
                 <br /><br />
                 <hr />
-                <p class="subtext">
-                    By creating an account you agree to our
-                    <a href="#"> Terms &#38; Privacy</a>.
-                </p>
-                <button class="button" type="submit">Sign Up</button>
-                <p class="subtext">Already have an account?</p>
+                <button class="registerButton" type="submit">Sign Up</button>
+                <p class="registerSubtext">Already have an account?</p>
             </form>
             </div>
         </div>
