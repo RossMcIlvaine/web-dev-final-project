@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "./Login/Login.js";
-import Register from "./Register/Register.js";
+import AuthLogin from "./Auth/AuthLogin.js";
+import AuthRegister from "./Auth/AuthRegister.js";
 import ExerciseAuthModule from "./Exercise/ExerciseAuth.js";
 import WorkoutAuthModule from "./Workout/WorkoutAuth.js";
 
@@ -24,8 +24,8 @@ const Components = () => {
           <Route path="/" exact component={AuthModule} />
           <Route path="/:username/workouts" component={WorkoutAuthModule} />
           <Route path="/:username/exercises" component={ExerciseAuthModule} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
+          <Route path="/login" component={AuthLogin} />
+          <Route path="/register" component={AuthRegister} />
           <Redirect to="/" />
         </Switch>
       </Router>
