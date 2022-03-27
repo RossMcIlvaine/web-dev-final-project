@@ -22,11 +22,11 @@ export const createUser = (newUser) => {
 };
 
 export const loginUser = (existingUser) => {
-  const user = new Parse.User();
   let username = existingUser.username;
   let password = existingUser.password;
 
-  return user
+  console.log("User: ", existingUser);
+  return Parse.User
     .logIn(username, password)
     .then((userLoggedIn) => {
       return userLoggedIn;
