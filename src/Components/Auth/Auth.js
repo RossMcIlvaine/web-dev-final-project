@@ -15,7 +15,7 @@ const AuthModule = () => {
         <div class="login">
             <form>
                 <p class="registerSubtext">Don't have an account?</p>
-                <button class="registerButton" type="submit"><Link to="/register">Sign Up</Link></button>
+                <button class="registerButton" type="submit"><Link to="/register">Register</Link></button>
                 <hr />
                 <p class="registerSubtext">Already have an account?</p>
                 <button class="registerButton" type="submit"><Link to="/login">Log In</Link></button>
