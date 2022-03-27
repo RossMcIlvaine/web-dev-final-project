@@ -1,8 +1,9 @@
 import React from "react";
-import AuthLogin from "./Auth/AuthLogin.js";
-import AuthRegister from "./Auth/AuthRegister.js";
-import ExerciseModule from "./Exercise/Exercise.js";
-import WorkoutModule from "./Workout/Workout.js";
+import Login from "./Login/Login.js";
+import Register from "./Register/Register.js";
+import ExerciseAuthModule from "./Exercise/ExerciseAuth.js";
+import WorkoutAuthModule from "./Workout/WorkoutAuth.js";
+
 import Menubar from "./Menubar/Menubar.js";
 import AuthModule from "./Auth/Auth.js";
 
@@ -21,9 +22,10 @@ const Components = () => {
           {/* Routing added here, will be expanded with future components */}
           {/* New tabs must also be added with new routing */}
           <Route path="/" exact component={AuthModule} />
-          <Route path="/exercises" component={ExerciseModule} />
-          <Route path="/login" component={AuthLogin} />
-          <Route path="/register" component={AuthRegister} />
+          <Route path="/:username/workouts" component={WorkoutAuthModule} />
+          <Route path="/:username/exercises" component={ExerciseAuthModule} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Redirect to="/" />
         </Switch>
       </Router>
