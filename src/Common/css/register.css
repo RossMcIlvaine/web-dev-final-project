@@ -18,6 +18,17 @@ body {
   border-radius: 15px;
 }
 
+.login {
+  width: 382px;
+  height: 200px;
+  overflow: hidden;
+  margin: auto;
+  margin: 20 0 0 450px;
+  padding: 90px;
+  background: #213282;
+  border-radius: 15px;
+}
+
 h1 {
   text-align: center;
   color: black;
@@ -28,7 +39,7 @@ label {
   font-size: 15px;
 }
 
-#firstName {
+#username-input {
   width: 350px;
   height: 30px;
   border: none;
@@ -36,7 +47,7 @@ label {
   padding-left: 8px;
 }
 
-#lastName {
+#first-name-input {
   width: 350px;
   height: 30px;
   border: none;
@@ -44,7 +55,7 @@ label {
   padding-left: 8px;
 }
 
-#email {
+#last-name-input {
   width: 350px;
   height: 30px;
   border: none;
@@ -52,7 +63,15 @@ label {
   padding-left: 8px;
 }
 
-#password {
+#email-input {
+  width: 350px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  padding-left: 8px;
+}
+
+#password-input {
   width: 350px;
   height: 30px;
   border: none;
@@ -68,6 +87,9 @@ label {
   padding-left: 7px;
   color: white;
   background-color: #fcba03;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .header {
