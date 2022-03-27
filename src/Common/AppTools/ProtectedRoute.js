@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 
 // You can pass props using the spread operator to throw them on an object if there are too many to break out
 const ProtectedRoute = ({ component: Component, flag, ...rest }) => {
@@ -18,7 +18,7 @@ const ProtectedRoute = ({ component: Component, flag, ...rest }) => {
         <Redirect to={rest.path} />
       ) : (
         <div>
-          <p>You shouldn't be here! <a onClick={loginHandler}>Log In</a> or <a onClick={registerHandler}>Register</a> to view your page.</p>
+          <p>You shouldn't be here! <Link to="/login">Log In</Link> or <Link to="/register">Register</Link> to view your page.</p>
         </div>
       )}
     </div>

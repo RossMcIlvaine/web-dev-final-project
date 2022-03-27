@@ -14,6 +14,7 @@ const ExerciseModule = () => {
   }, []);
   return (
     <div>
+      <p>Hi</p>
       <ExerciseTable exercises={exercises}/>
     </div>
   );

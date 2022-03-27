@@ -16,6 +16,7 @@ const WorkoutModule = () => {
   }, []);
   return (
     <div>
+      <p>Hi</p>
       <WorkoutTable workouts={workouts}/>
       <WorkoutForm/>
     </div>
