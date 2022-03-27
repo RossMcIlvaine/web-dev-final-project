@@ -13,7 +13,7 @@ const AuthLogin = () => {
   const history = useHistory();
 
   const buttonHandler = () => {
-    history.push("/home");
+    history.push("/User/workouts");
   };
 
   // flags in the state to watch for add/remove updates

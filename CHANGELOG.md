@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2022-03-27
+### Added
+* Authentication modules
+* Parse user authentication
+* Protected routes on app data display
+
+### Changed
+* Changed routes to use protected routes and new authentication modules
+* User sign up and login now connects to database
+
 ## [0.2.0] - 2022-03-16
 ### Added
 * Static login page with styling

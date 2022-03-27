@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "./Login/Login.js";
-import Register from "./Register/Register.js";
+import Login from "./Auth/AuthLogin";
+import Register from "./Auth/AuthRegister";
 import ExerciseAuthModule from "./Exercise/ExerciseAuth.js";
 import WorkoutAuthModule from "./Workout/WorkoutAuth.js";
 
