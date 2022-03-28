@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getAllExercises from "../../Common/Services/GetExercise";
+import Menubar from "../Menubar/Menubar";
 import ExerciseTable from "./ExerciseTable";
 import '../../Common/css/workout.css';
 
@@ -14,7 +15,7 @@ const ExerciseModule = () => {
   }, []);
   return (
     <div>
-      <p>Hi</p>
+      <Menubar />
       <ExerciseTable exercises={exercises}/>
     </div>
   );

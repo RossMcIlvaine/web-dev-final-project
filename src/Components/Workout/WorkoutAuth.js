@@ -5,7 +5,7 @@ import WorkoutModule from "./Workout";
 
 const WorkoutAuthModule = () => {
   const [flag, setFlag] = useState(false);
-  console.log(Parse.User.current());
+  // console.log(Parse.User.current());
   var check = false;
   if (Parse.User.current() != null) {
     check = Parse.User.current().authenticated();

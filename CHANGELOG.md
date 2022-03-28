@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Authentication modules
 * Parse user authentication
 * Protected routes on app data display
+* Added logout button to menubar, and added logout functionalitu
 
 ### Changed
 * Changed routes to use protected routes and new authentication modules
