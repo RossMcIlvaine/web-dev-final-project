@@ -36,11 +36,23 @@ export const loginUser = (existingUser) => {
     });
 };
 
-export const logoutUser = () => {
+export const logoutUser = (history) => {
   return Parse.User.logOut().then(() => {
     console.log('user logged out successfully');
+  })
+  .then(() => {
+    history.push("/");
   })
   .catch((error) => {
     alert(`Error: ${error.message}`);
   });
+};
+
+export const authenticationCheck = () => {
+  var check = false;
+  if (Parse.User.current() != null) {
+    check = Parse.User.current().authenticated();
+  }
+
+  return check;
 };

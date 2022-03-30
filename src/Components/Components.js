@@ -5,7 +5,6 @@ import ExerciseModule from "./Exercise/Exercise";
 import ExerciseAuthModule from "./Exercise/ExerciseAuth";
 import WorkoutModule from "./Workout/Workout";
 import WorkoutAuthModule from "./Workout/WorkoutAuth";
-import ProtectedRoute from "../Common/AppTools/ProtectedRoute";
 import AuthModule from "./Auth/Auth.js";
 
 import {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { createUser } from "../../Common/Services/AuthService";
-import { useHistory } from "react-router-dom";
+import { authenticationCheck, createUser } from "../../Common/Services/AuthService";
+import { useHistory, Redirect } from "react-router-dom";
 import AuthForm from "./AuthForm";
 import '../../Common/css/register.css';
 
@@ -15,16 +15,13 @@ const AuthRegister = () => {
 
   const history = useHistory();
 
-  // Continue button sends users to workout tab after registering
-  const buttonHandler = () => {
-    history.push("/workouts");
-  };
-
   // flags in the state to watch for add/remove updates
   const [add, setAdd] = useState(false);
 
   // flag to render register vs login form
   const [registering, setRegistering] = useState(true);
+
+  var check = authenticationCheck();
 
   // useEffect that run when changes are made to the state variable flags
   useEffect(() => {
@@ -58,18 +55,26 @@ const AuthRegister = () => {
     setAdd(true);
   };
 
-  return (
-    <div>
-      <AuthForm
-        user={newUser}
-        reg={registering}
-        onChange={onChangeHandler}
-        onSubmit={onSubmitHandler}
-      />
-      <br />
-      <button className="registerButton" onClick={buttonHandler}>Continue</button>
-    </div>
-  );
+  if(!check) {
+    return (
+      <div>
+        <AuthForm
+          user={newUser}
+          reg={registering}
+          onChange={onChangeHandler}
+          onSubmit={onSubmitHandler}
+        />
+      </div>
+    );
+  }
+  else {
+    return(
+      <div>
+        {/* send users to workouts if already signed in */}
+        <Redirect to="/User/workouts"/>
+      </div>
+    );
+  }
 };
 
 export default AuthRegister;

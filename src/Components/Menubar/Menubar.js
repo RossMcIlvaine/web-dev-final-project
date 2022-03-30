@@ -9,9 +9,8 @@ const Menubar = () => {
 
     // log out user when clicking the button on the menubar
     const logoutHandler = () => {
-        logoutUser();
-        history.push("/");
-      };
+        logoutUser(history);
+    };
 
     return (
         <nav>

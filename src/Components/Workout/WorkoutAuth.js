@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Parse from "parse";
+import { authenticationCheck } from "../../Common/Services/AuthService";
 import ProtectedRoute from "../../Common/AppTools/ProtectedRoute";
 import WorkoutModule from "./Workout";
 
 const WorkoutAuthModule = () => {
   const [flag, setFlag] = useState(false);
-  var check = false;
-  if (Parse.User.current() != null) {
-    check = Parse.User.current().authenticated();
-  }
+  var check = authenticationCheck();
 
   useEffect(() => {
+    console.log('entered workout auth');
     if (check) {
       console.log("GOOD");
       setFlag(true);

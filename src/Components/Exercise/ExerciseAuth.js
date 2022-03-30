@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Parse from "parse";
+import { authenticationCheck } from "../../Common/Services/AuthService";
 import ProtectedRoute from "../../Common/AppTools/ProtectedRoute";
 import ExerciseModule from "./Exercise";
 
 const ExerciseAuthModule = () => {
   const [flag, setFlag] = useState(false);
-  // console.log(Parse.User.current());
-  var check = false;
-  if (Parse.User.current() != null) {
-    check = Parse.User.current().authenticated();
-  }
+  var check = authenticationCheck();
 
   useEffect(() => {
     if (check) {
@@ -20,7 +16,7 @@ const ExerciseAuthModule = () => {
       setFlag(false);
     }
   }, [check]);
-  
+
   return (
     <div>
       <ProtectedRoute
