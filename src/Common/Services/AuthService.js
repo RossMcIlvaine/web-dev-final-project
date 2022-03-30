@@ -35,3 +35,12 @@ export const loginUser = (existingUser) => {
       alert(`Error: ${error.message}`);
     });
 };
+
+export const logoutUser = () => {
+  return Parse.User.logOut().then(() => {
+    console.log('user logged out successfully');
+  })
+  .catch((error) => {
+    alert(`Error: ${error.message}`);
+  });
+};

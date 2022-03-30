@@ -89,7 +89,7 @@ const AuthForm = ({ user, reg, onChange, onSubmit }) => {
   else { // otherwise display login form
     return (
         <div>
-            <h1 class="header">
+            <h1 className="header">
                 Sign In to Your Account
             </h1>
             <div className="login">
@@ -127,7 +127,7 @@ const AuthForm = ({ user, reg, onChange, onSubmit }) => {
                 <button type="submit" className="registerButton" onSubmit={onSubmit}>
                     Submit
                 </button>
-                <p class="registerSubtext">Don't have an account?</p>
+                <p className="registerSubtext">Don't have an account?</p>
                 </div>
             </form>
             </div>

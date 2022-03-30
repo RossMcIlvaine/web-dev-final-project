@@ -15,8 +15,9 @@ const AuthRegister = () => {
 
   const history = useHistory();
 
+  // Continue button sends users to workout tab after registering
   const buttonHandler = () => {
-    history.push("/User/workouts");
+    history.push("/workouts");
   };
 
   // flags in the state to watch for add/remove updates
@@ -66,7 +67,7 @@ const AuthRegister = () => {
         onSubmit={onSubmitHandler}
       />
       <br />
-      <button onClick={buttonHandler}>Continue</button>
+      <button className="registerButton" onClick={buttonHandler}>Continue</button>
     </div>
   );
 };

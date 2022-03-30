@@ -12,8 +12,9 @@ const AuthLogin = () => {
 
   const history = useHistory();
 
+  // Continue button sends users to workout tab after logging in
   const buttonHandler = () => {
-    history.push("/User/workouts");
+    history.push("/workouts");
   };
 
   // flags in the state to watch for add/remove updates
@@ -62,7 +63,7 @@ const AuthLogin = () => {
         onSubmit={onSubmitHandler}
       />
       <br />
-      <button onClick={buttonHandler}>Continue</button>
+      <button className="loginButton" onClick={buttonHandler}>Continue</button>
     </div>
   );
 };
