@@ -9,9 +9,21 @@
   font-family: "Nunito", sans-serif;
 }
 
+.section-header {
+  font-family: "Nunito", sans-serif;
+  margin-left: 30px;
+}
+
 .subtext {
   color: black;
   font-family: "Source Sans Pro", sans-serif;
+}
+
+hr {
+  height: 3px;
+  background-color: #fcba03;
+  border: none;
+  width: 80%;
 }
 
 .button {

@@ -1,14 +1,8 @@
 import React from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 const ProtectedRoute = ({ component: Component, flag, ...rest }) => {
-  const history = useHistory();
-  const registerHandler = () => {
-    history.push("/register");
-  };
-  const loginHandler = () => {
-    history.push("/login");
-  };
+
   console.log(rest); // show rest.path in the console
 
   return (

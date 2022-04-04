@@ -1,4 +1,4 @@
-import { FilterOutline } from 'react-ionicons'
+import Filter from "../Filter/Filter";
 
 // displays all workouts currently in database
 const WorkoutTable = ({ workouts }) => {
@@ -6,7 +6,7 @@ const WorkoutTable = ({ workouts }) => {
     <div>
         <h1 class="header">My Workouts</h1>
         <p class="filter">
-        <FilterOutline /> Filter
+        <Filter />
         </p>
         <table id="workouts">
         <tr>

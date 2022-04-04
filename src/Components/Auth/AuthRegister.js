@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { authenticationCheck, createUser } from "../../Common/Services/AuthService";
-import { useHistory, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import AuthForm from "./AuthForm";
 import '../../Common/css/register.css';
 
@@ -12,8 +12,6 @@ const AuthRegister = () => {
     email: "",
     password: ""
   });
-
-  const history = useHistory();
 
   // flags in the state to watch for add/remove updates
   const [add, setAdd] = useState(false);
@@ -70,8 +68,8 @@ const AuthRegister = () => {
   else {
     return(
       <div>
-        {/* send users to workouts if already signed in */}
-        <Redirect to="/User/workouts"/>
+        {/* send users to home if already signed in */}
+        <Redirect to="/User/home"/>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { loginUser, authenticationCheck } from "../../Common/Services/AuthService";
-import { useHistory, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import AuthForm from "./AuthForm";
 import '../../Common/css/login.css';
 
@@ -9,8 +9,6 @@ const AuthLogin = () => {
     username: "",
     password: ""
   });
-
-  const history = useHistory();
 
   // flags in the state to watch for add/remove updates
   const [add, setAdd] = useState(false);
@@ -66,8 +64,8 @@ const AuthLogin = () => {
   else {
     return(
       <div>
-        {/* send users to workouts if already logged in */}
-        <Redirect to="/User/workouts"/>
+        {/* send users to home if already logged in */}
+        <Redirect to="/User/home"/>
       </div>
     );
   }

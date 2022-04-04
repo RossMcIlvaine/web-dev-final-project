@@ -6,6 +6,8 @@ import ExerciseAuthModule from "./Exercise/ExerciseAuth";
 import WorkoutModule from "./Workout/Workout";
 import WorkoutAuthModule from "./Workout/WorkoutAuth";
 import AuthModule from "./Auth/Auth.js";
+import Home from "./Home/Home";
+import HomeAuthModule from "./Home/HomeAuth";
 
 import {
   BrowserRouter as Router,
@@ -23,8 +25,10 @@ const Components = () => {
           {/* New tabs must also be added with new routing */}
           <Route path="/" exact component={AuthModule} />
           {/* These routes are used after authentication, sends user to their personal app display */}
+          <Route path="/:username/home" component={Home}/>
           <Route path="/:username/workouts" component={WorkoutModule} />
           <Route path="/:username/exercises" component={ExerciseModule} />
+          <Route path="/home" component={HomeAuthModule}/>
           <Route path="/workouts" component={WorkoutAuthModule} />
           <Route path="/exercises" component={ExerciseAuthModule} />
           <Route path="/login" component={Login} />
