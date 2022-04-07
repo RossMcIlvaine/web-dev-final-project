@@ -1,13 +1,11 @@
-import Filter from "../Filter/Filter";
+import React from 'react';
 
 // displays all workouts currently in database
 const WorkoutTable = ({ workouts }) => {
+
   return (
     <div>
         <h1 class="header">My Workouts</h1>
-        <p class="filter">
-        <Filter />
-        </p>
         <table id="workouts">
         <tr>
             <th>#</th>
@@ -15,7 +13,10 @@ const WorkoutTable = ({ workouts }) => {
             <th>Category</th>
         </tr>
 
-        {workouts.map(
+        {workouts
+        //.filter((workout) => 
+        //workout.get("muscleGroup") === category)
+        .map(
             (workout) =>
             <tr key={workout}>
                 <td>{workout.id}</td>

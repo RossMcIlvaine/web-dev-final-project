@@ -79,6 +79,12 @@ img.filter {
   padding-left: 10px;
 }
 
+.homePhoto {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 p.filter {
   text-align: right;
   font-family: "Source Sans Pro", sans-serif;

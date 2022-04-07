@@ -56,3 +56,9 @@ export const authenticationCheck = () => {
 
   return check;
 };
+
+export const adminCheck = () => {
+  var isAdmin = Parse.User.current().get("isAdmin");
+
+  return isAdmin;
+};
