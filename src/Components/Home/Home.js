@@ -5,8 +5,8 @@ import { authenticationCheck } from "../../Common/Services/AuthService";
 import NewsCard from "./NewsCard";
 import AnnouncementCard from "./AnnouncementCard";
 import EventCard from "./EventCard";
-import getAllAnnouncements from "../../Common/Services/GetAnnouncements";
-import getAllEvents from "../../Common/Services/GetEvents";
+import { getAllAnnouncements, deleteAnnouncement } from "../../Common/Services/GetAnnouncements";
+import { getAllEvents, deleteEvent } from "../../Common/Services/GetEvents";
 import { deleteNewsItem, getAllNews } from "../../Common/Services/GetNews";
 import { createTheme } from "@mui/material";
 import { adminCheck } from "../../Common/Services/AuthService";
@@ -21,8 +21,9 @@ const Home = () => {
     const [announcements, setAnnouncements] = useState([]);
     const [events, setEvents] = useState([]);
     const [news, setNews] = useState([]);
-    const [add, setAdd] = useState(false);
-    const [remove, setRemove] = useState("");
+    const [removeNews, setRemoveNews] = useState("");
+    const [removeEvent, setRemoveEvent] = useState("");
+    const [removeAnnouncement, setRemoveAnnouncement] = useState("");
     var check = authenticationCheck();
     var isAdmin = adminCheck();
     
@@ -43,18 +44,40 @@ const Home = () => {
 
     useEffect(() => {
       // get announcements, events, and news from database
-      if (remove.length > 0) {
+      if (removeNews.length > 0) {
         //Filter the old lessons list to take out selected lesson
-        const newNews = news.filter((newsitem) => newsitem.id !== remove);
+        const newNews = news.filter((newsitem) => newsitem.id !== removeNews);
         setNews(newNews);
   
-        deleteNewsItem(remove).then(() => {
-          console.log("Removed news item with ID: ", remove);
+        deleteNewsItem(removeNews).then(() => {
+          console.log("Removed news item with ID: ", removeNews);
         });
         // Reset remove state variable
-        setRemove("");
+        setRemoveNews("");
       }
-    }, [news, remove]);
+      if (removeEvent.length > 0) {
+        //Filter the old lessons list to take out selected lesson
+        const newEvent = events.filter((event) => event.id !== removeEvent);
+        setEvents(newEvent);
+  
+        deleteEvent(removeEvent).then(() => {
+          console.log("Removed event with ID: ", removeEvent);
+        });
+        // Reset remove state variable
+        setRemoveEvent("");
+      }
+      if (removeAnnouncement.length > 0) {
+        //Filter the old lessons list to take out selected lesson
+        const newAnnouncement = announcements.filter((ann) => ann.id !== removeAnnouncement);
+        setAnnouncements(newAnnouncement);
+  
+        deleteAnnouncement(removeAnnouncement).then(() => {
+          console.log("Removed announcement with ID: ", removeAnnouncement);
+        });
+        // Reset remove state variable
+        setRemoveAnnouncement("");
+      }
+    }, [news, removeNews, removeEvent, removeAnnouncement]);
 
     if(check) {
       return (
@@ -68,21 +91,21 @@ const Home = () => {
           <div style={{ flexGrow: 1, padding: 10, display: 'flex'}}>
           {announcements.map(
             (announcement) =>
-              <AnnouncementCard announcement={announcement} />
+              <AnnouncementCard announcement={announcement} setRemove={setRemoveAnnouncement} isAdmin={isAdmin}/>
           )}
           </div>
           <h2 class="section-header">Events</h2>
           <div style={{flexGrow: 1, padding: 10, display: 'flex'}}>
           {events.map(
             (event) =>
-              <EventCard event={event} />
+              <EventCard event={event} setRemove={setRemoveEvent} isAdmin={isAdmin}/>
           )}
           </div>
           <h2 class="section-header">News</h2>
           <div style={{flexGrow: 1, padding: 10, display: 'flex'}}>
           {news.map(
             (newsItem) =>
-              <NewsCard newsItem={newsItem} setRemove={setRemove} isAdmin={isAdmin}/>
+              <NewsCard newsItem={newsItem} setRemoveNews={setRemoveNews} isAdmin={isAdmin}/>
           )}
           </div>
         </div>
