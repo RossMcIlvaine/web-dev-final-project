@@ -8,10 +8,10 @@ import EventCard from "./EventCard";
 import { getAllAnnouncements, deleteAnnouncement } from "../../Common/Services/GetAnnouncements";
 import { getAllEvents, deleteEvent } from "../../Common/Services/GetEvents";
 import { deleteNewsItem, getAllNews } from "../../Common/Services/GetNews";
-import { createTheme } from "@mui/material";
 import { adminCheck } from "../../Common/Services/AuthService";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const THEME = createTheme({
+const theme = createTheme({
   typography: {
    "fontFamily": `"Nunito", sans-serif`,
   }
@@ -81,6 +81,7 @@ const Home = () => {
 
     if(check) {
       return (
+        <ThemeProvider theme={theme}>
         <div>
           <Menubar />
           <h1 class="header">Welcome to Notre Dame Boxing</h1>
@@ -109,6 +110,7 @@ const Home = () => {
           )}
           </div>
         </div>
+        </ThemeProvider>
       );
     }
     else {

@@ -6,11 +6,19 @@ import { CardActions } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@mui/material';
 import { deleteAnnouncement } from '../../Common/Services/GetAnnouncements';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  typography: {
+   "fontFamily": `"Nunito", sans-serif`,
+  }
+});
   
   const AnnouncementCard = ({announcement, setRemove, isAdmin}) => {
 
     if(isAdmin) {
       return(
+        <ThemeProvider theme={theme}>
         <div style={{ marginLeft: 30 }}>
             <Card sx={{ maxWidth: 345 }}>
                 <CardContent>
@@ -28,10 +36,12 @@ import { deleteAnnouncement } from '../../Common/Services/GetAnnouncements';
                 </CardContent>
             </Card>
         </div>
+        </ThemeProvider>
       );
     }
     else {
       return (
+        <ThemeProvider theme={theme}>
         <div style={{ marginLeft: 30 }}>
             <Card sx={{ maxWidth: 345 }}>
                 <CardContent>
@@ -44,6 +54,7 @@ import { deleteAnnouncement } from '../../Common/Services/GetAnnouncements';
                 </CardContent>
             </Card>
         </div>
+        </ThemeProvider>
       );
     }    
   };

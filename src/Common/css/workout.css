@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito|Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Nunito|Source+Sans+Pro|Bebas+Neue");
 
 .header {
-  font-family: "Nunito", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   text-align: center;
+  font-size: 44px;
 }
 
 .subheader {
@@ -10,8 +11,9 @@
 }
 
 .section-header {
-  font-family: "Nunito", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   margin-left: 30px;
+  font-size: 30px;
 }
 
 .subtext {
