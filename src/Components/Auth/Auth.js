@@ -26,8 +26,8 @@ const AuthModule = () => {
   else {
     return(
       <div>
-        {/* send users to workouts if already logged in */}
-        <Redirect to="/User/workouts"/>
+        {/* send users to home if already logged in */}
+        <Redirect to="/User/home"/>
       </div>
     );
   }

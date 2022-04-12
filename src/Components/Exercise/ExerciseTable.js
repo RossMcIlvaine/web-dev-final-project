@@ -1,4 +1,4 @@
-import { FilterOutline } from 'react-ionicons';
+import Filter from "../Filter/Filter";
 
 // displays all exercises currently in database
 // Future work will allow users to create and add exercises to the database
@@ -7,7 +7,7 @@ const ExerciseTable = ({ exercises }) => {
       <div>
           <h1 class="header">My Exercises</h1>
           <p class="filter">
-            <FilterOutline /> Filter
+            <Filter />
           </p>
           <table id="workouts">
           <tr>
