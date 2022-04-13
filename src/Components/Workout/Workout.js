@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import getAllWorkouts from "../../Common/Services/GetWorkout";
+import { getAllWorkouts, getUserWorkouts } from "../../Common/Services/GetWorkout";
 import Menubar from "../Menubar/Menubar";
 import WorkoutTable from "./WorkoutTable";
 import WorkoutForm from "./WorkoutForm";
@@ -14,6 +14,7 @@ import '../../Common/css/workout.css';
 
 const WorkoutModule = () => {
   const [workouts, setWorkouts] = useState([]);
+  const [userWorkouts, setUserWorkouts] = useState([]);
   const [filterOn, setFilterOn] = useState(false);
   const [category, setCategory] = useState('');
 
@@ -29,6 +30,18 @@ const WorkoutModule = () => {
     if(check) {
       getAllWorkouts().then((workouts) => {
         setWorkouts(workouts);
+      });
+    }
+  }, [check]);
+
+  useEffect(() => {
+    if(check) {
+      // setUserWorkouts(getUserWorkouts());
+      // console.log(userWorkouts);
+
+      getUserWorkouts().then((userWorkouts) => {
+        console.log(userWorkouts);
+        setUserWorkouts(userWorkouts);
       });
     }
   }, [check]);
@@ -57,7 +70,7 @@ const WorkoutModule = () => {
           </FormControl>
         </Box>
     </p>*/}
-        <WorkoutTable workouts={workouts}/>
+        <WorkoutTable workouts={userWorkouts}/>
         <WorkoutForm/>
       </div>
     );

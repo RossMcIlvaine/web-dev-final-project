@@ -11,7 +11,6 @@ const ExerciseTable = ({ exercises }) => {
           </p>
           <table id="workouts">
           <tr>
-              <th>#</th>
               <th>Name</th>
               <th>Category</th>
           </tr>
@@ -19,7 +18,6 @@ const ExerciseTable = ({ exercises }) => {
           {exercises.map(
               (exercise) =>
               <tr key={exercise}>
-                  <td>{exercise.id}</td>
                   <td>{exercise.get("name")}</td>
                   <td>{exercise.get("muscleGroup")}</td>
               </tr>
