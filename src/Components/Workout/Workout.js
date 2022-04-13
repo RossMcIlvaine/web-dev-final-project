@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import getAllWorkouts from "../../Common/Services/GetWorkout";
+import { getAllWorkouts, getUserWorkouts } from "../../Common/Services/GetWorkout";
 import Menubar from "../Menubar/Menubar";
 import WorkoutTable from "./WorkoutTable";
 import WorkoutForm from "./WorkoutForm";
@@ -9,6 +9,9 @@ import '../../Common/css/workout.css';
 
 const WorkoutModule = () => {
   const [workouts, setWorkouts] = useState([]);
+  const [userWorkouts, setUserWorkouts] = useState([]);
+  const [filterOn, setFilterOn] = useState(false);
+  const [category, setCategory] = useState('');
 
   var check = authenticationCheck();
 
@@ -22,11 +25,43 @@ const WorkoutModule = () => {
     }
   }, [check]);
 
+  useEffect(() => {
+    if(check) {
+      // setUserWorkouts(getUserWorkouts());
+      // console.log(userWorkouts);
+
+      getUserWorkouts().then((userWorkouts) => {
+        console.log(userWorkouts);
+        setUserWorkouts(userWorkouts);
+      });
+    }
+  }, [check]);
+
   if(check) {
     return (
       <div>
         <Menubar/>
-        <WorkoutTable workouts={workouts}/>
+        {/*
+        <p class="filter">
+        <Box sx={{ minWidth: 120 }}>
+          <FormControl sx={{ minWidth: 150 }}>
+            <InputLabel id="demo-simple-select-label">Filter</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={category}
+              label="Filter"
+              onChange={handleChange}
+            >
+              <MenuItem value={10}>Full Body</MenuItem>
+              <MenuItem value={20}>Upper Body</MenuItem>
+              <MenuItem value={30}>Lower Body</MenuItem>
+              <MenuItem value={40}>Core</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+    </p>*/}
+        <WorkoutTable workouts={userWorkouts}/>
         <WorkoutForm/>
       </div>
     );
