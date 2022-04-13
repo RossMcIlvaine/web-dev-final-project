@@ -28,12 +28,12 @@ const theme = createTheme({
                     <Typography variant="body2" color="text.secondary">
                     {announcement.get("content")}
                     </Typography>
-                    <CardActions>
-                      <Button onClick={() => {deleteAnnouncement(announcement.id); setRemove(announcement.id)}}>
-                          <DeleteIcon />
-                      </Button>
-                    </CardActions>
                 </CardContent>
+                <CardActions>
+                    <Button style={{ float: 'right' }} onClick={() => {deleteAnnouncement(announcement.id); setRemove(announcement.id)}}>
+                        <DeleteIcon />
+                    </Button>
+                </CardActions>
             </Card>
         </div>
         </ThemeProvider>
