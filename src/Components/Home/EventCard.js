@@ -22,12 +22,12 @@ import { Button } from '@mui/material';
                         <Typography variant="body2" color="text.secondary">
                             {event.get("date").toDateString()}
                         </Typography>
-                        <CardActions>
-                            <Button onClick={() => {deleteEvent(event.id); setRemove(event.id)}}>
-                                <DeleteIcon />
-                            </Button>
-                        </CardActions>
                     </CardContent>
+                    <CardActions>
+                        <Button onClick={() => {deleteEvent(event.id); setRemove(event.id)}}>
+                            <DeleteIcon />
+                        </Button>
+                    </CardActions>
                 </Card>
             </div>
         );

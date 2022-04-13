@@ -21,6 +21,14 @@
   font-family: "Source Sans Pro", sans-serif;
 }
 
+.inline {
+  display: inline;
+}
+
+input + button {
+  margin-left: 30px;
+}
+
 hr {
   height: 3px;
   background-color: #fcba03;
@@ -47,7 +55,7 @@ hr {
 #workouts {
   font-family: "Source Sans Pro", sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -74,22 +82,10 @@ hr {
   color: white;
 }
 
-img.filter {
-  width: 24px;
-  height: 24px;
-  float: right;
-  padding-left: 10px;
-}
-
 .homePhoto {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-p.filter {
-  text-align: right;
-  font-family: "Source Sans Pro", sans-serif;
 }
 
 .inputText {
@@ -116,7 +112,10 @@ input[type="checkbox"] {
   color: #ffffff;
   background: #fcba03;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 7px;
+  width: 88%;
   transition: all 0.25s ease-out;
 }
 
@@ -153,6 +152,9 @@ input[type="checkbox"] {
 
 .collapsible-content .content-inner {
   background: #eee;
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
   border-bottom: 1px solid #eee;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
@@ -161,4 +163,14 @@ input[type="checkbox"] {
 
 .collapsible-content p {
   margin-bottom: 0;
+}
+
+.select {
+  background-color: #213282;
+  color: white;
+  padding: 5px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-left: 1413px;
 }
