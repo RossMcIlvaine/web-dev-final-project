@@ -2,22 +2,22 @@
 // Workouts will be stored on individual account basis and be sent to server
 // Future work will actually create a Workout and add it to database based on user input
 
-const workoutForm = () => {
+const workoutForm = ({onSubmit}) => {
   return (
     <div class="wrap-collabsible">
       <input id="collapsible" class="toggle" type="checkbox" />
       <label for="collapsible" class="lbl-toggle">Add Workout</label>
       <div class="collapsible-content">
         <div class="content-inner">
-        <form>
+        <form onSubmit={onSubmit}>
         <p class="subheader">Workout Name</p>
-        <input type="text" id="workoutName" placeholder="Workout Name" class="inputText"></input>
+        <input type="text" id="workoutName" placeholder="Workout Name" class="inputText" name="workoutName"></input>
         <p class="subheader">Muscle Group</p>
-        <select id="focus">
-          <option id="full">Full Body</option>
-          <option id="arms">Upper Body</option>
-          <option id="legs">Lower Body</option>
-          <option id="core">Core</option>
+        <select id="focus" name="focus">
+          <option id="full" value="Full Body">Full Body</option>
+          <option id="arms" value="Upper Body">Upper Body</option>
+          <option id="legs" value="Lower Body">Lower Body</option>
+          <option id="core" vale="Core">Core</option>
         </select>
         <p class="subheader">Units</p>
         <div>
