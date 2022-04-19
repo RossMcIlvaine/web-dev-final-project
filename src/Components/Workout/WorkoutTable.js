@@ -93,6 +93,7 @@ const WorkoutTable = ({ workouts }) => {
             <option value="Core">Core</option>
           </select>
         <table id="workouts">
+          
         <tr>
             <th>#</th>
             <th>Name</th>
@@ -129,7 +130,7 @@ const WorkoutTable = ({ workouts }) => {
                   </Box>
                 </Modal>
             </tr>
-        )}
+            )}
         </table>
     </div>
   );
