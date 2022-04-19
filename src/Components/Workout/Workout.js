@@ -17,7 +17,6 @@ const WorkoutModule = () => {
     if(check) {
       getAllWorkouts().then((workouts) => {
         setWorkouts(workouts);
-        console.log(workouts)
       });
     }
   }, [check]);
@@ -26,7 +25,7 @@ const WorkoutModule = () => {
     return (
       <div>
         <Menubar/>
-        <WorkoutTable workouts={workouts}/>
+        <WorkoutTable workouts={workouts} />
         <WorkoutForm/>
       </div>
     );

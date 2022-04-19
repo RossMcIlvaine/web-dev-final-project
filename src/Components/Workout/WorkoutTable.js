@@ -97,6 +97,7 @@ const WorkoutTable = ({ workouts }) => {
             <th>#</th>
             <th>Name</th>
             <th>Category</th>
+            <th>Exercises</th>
             <th>Details</th>
         </tr>
 
@@ -107,6 +108,7 @@ const WorkoutTable = ({ workouts }) => {
                 <td>{workout.id}</td>
                 <td>{workout.get("name")}</td>
                 <td>{workout.get("muscleGroup")}</td>
+                <td>{workout.get("ex")}</td>
                 <Button onClick={handleOpen}><td>View Workout</td></Button>
                 <Modal
                   open={open}
@@ -122,7 +124,7 @@ const WorkoutTable = ({ workouts }) => {
                       {workout.get("muscleGroup")}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                      {workout.exercises}
+                      {workout.get("ex")}
                     </Typography>
                   </Box>
                 </Modal>

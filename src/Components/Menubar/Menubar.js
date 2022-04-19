@@ -18,7 +18,6 @@ const Menubar = () => {
                 {/* Make use of routing in navigation */}
                 <li><Link to="/home">Home</Link></li>
                 <li><Link to="/workouts">Workouts</Link></li>
-                <li><Link to="/exercises">Exercises</Link></li>
                 <li><a onClick={logoutHandler}>Log Out</a></li>
             </ul>
         </nav>
