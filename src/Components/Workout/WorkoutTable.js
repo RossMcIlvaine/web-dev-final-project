@@ -93,70 +93,41 @@ const WorkoutTable = ({ workouts }) => {
             <option value="Core">Core</option>
           </select>
         <table id="workouts">
-          
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Details</th>
-        </tr>
-
-        {filteredWorkouts
-        .map(
-            (workout) =>
-            <tr key={workout}>
-                <td>{workout.id}</td>
-                <td>{workout.get("name")}</td>
-                <td>{workout.get("muscleGroup")}</td>
-                <Button onClick={handleOpen}><td>View Workout</td></Button>
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description"
-                  >
-                  <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h5" component="h2">
-                      {workout.get("name")}
-                    </Typography>
-                    <Typography id="modal-modal-title" variant="subtitle1" component="h2">
-                      {workout.get("muscleGroup")}
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                      {workout.exercises}
-                    </Typography>
-                  </Box>
-                </Modal>
+          <tbody>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Details</th>
             </tr>
 
-            {workouts
-            //.filter((workout) => 
-            //workout.get("muscleGroup") === category)
+            {filteredWorkouts
             .map(
-                (workout) =>
-                <tr key={workout}>
-                    <td>{workout.get("name")}</td>
-                    <td>{workout.get("muscleGroup")}</td>
-                    <Button onClick={handleOpen}><td>View Workout</td></Button>
-                    <Modal
-                      open={open}
-                      onClose={handleClose}
-                      aria-labelledby="modal-modal-title"
-                      aria-describedby="modal-modal-description"
-                      >
-                      <Box sx={style}>
-                        <Typography id="modal-modal-title" variant="h5" component="h2">
-                          {workout.get("name")}
-                        </Typography>
-                        <Typography id="modal-modal-title" variant="subtitle1" component="h2">
-                          {workout.get("muscleGroup")}
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                          Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                        </Typography>
-                      </Box>
-                    </Modal>
-                </tr>
+              (workout) =>
+              <tr key={workout}>
+                  <td>{workout.id}</td>
+                  <td>{workout.get("name")}</td>
+                  <td>{workout.get("muscleGroup")}</td>
+                  <Button onClick={handleOpen}><td>View Workout</td></Button>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                    >
+                    <Box sx={style}>
+                      <Typography id="modal-modal-title" variant="h5" component="h2">
+                        {workout.get("name")}
+                      </Typography>
+                      <Typography id="modal-modal-title" variant="subtitle1" component="h2">
+                        {workout.get("muscleGroup")}
+                      </Typography>
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        {workout.exercises}
+                      </Typography>
+                    </Box>
+                  </Modal>
+              </tr>
             )}
           </tbody>
         </table>
