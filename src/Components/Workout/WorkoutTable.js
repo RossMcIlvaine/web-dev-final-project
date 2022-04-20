@@ -102,7 +102,7 @@ const WorkoutTable = ({ workouts }) => {
                 <td>{workout.id}</td>
                 <td>{workout.get("name")}</td>
                 <td>{workout.get("muscleGroup")}</td>
-                <td>{workout.get("ex")}</td>
+                <td>{workout.get("exercises")}</td>
                 {/*}
                 <Button onClick={handleOpen}><td>View Workout</td></Button>
                 <Modal

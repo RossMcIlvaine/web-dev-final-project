@@ -6,6 +6,8 @@ import WorkoutAuthModule from "./Workout/WorkoutAuth";
 import AuthModule from "./Auth/Auth.js";
 import Home from "./Home/Home";
 import HomeAuthModule from "./Home/HomeAuth";
+import ProfileModule from "./Profile/Profile";
+import ProfileAuthModule from "./Profile/ProfileAuth";
 
 import {
   BrowserRouter as Router,
@@ -27,6 +29,8 @@ const Components = () => {
           <Route path="/:username/workouts" component={WorkoutModule} />
           <Route path="/home" component={HomeAuthModule}/>
           <Route path="/workouts" component={WorkoutAuthModule} />
+          <Route path="/:username/profile" component={ProfileModule} />
+          <Route path="/profile" component={ProfileAuthModule} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Redirect to="/" />

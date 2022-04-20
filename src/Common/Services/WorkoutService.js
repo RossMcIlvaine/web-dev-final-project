@@ -33,3 +33,24 @@ export const getUserWorkouts = () => {
     return results;
   });
 };
+
+export const addWorkout = (data) => {
+  // Create new workout and add values to it
+  let Workout = new Parse.Object('Workout');
+  Workout.set("name", data.get("workoutName"))
+  Workout.set("muscleGroup", data.get("focus"));
+
+  try {
+    Workout.save().then(() => {
+      const User = Parse.User.current();
+      const relation = User.relation("workouts");
+      relation.add(Workout);
+      User.save();
+      alert('Success! Workout created!');
+    });
+    return true;
+  } catch (error) {
+    alert(`Error! ${error.message}`);
+    return false;
+  };
+}
