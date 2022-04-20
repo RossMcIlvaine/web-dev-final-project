@@ -10,8 +10,6 @@ import '../../Common/css/workout.css';
 const WorkoutModule = () => {
   const [workouts, setWorkouts] = useState([]);
   const [userWorkouts, setUserWorkouts] = useState([]);
-  const [filterOn, setFilterOn] = useState(false);
-  const [category, setCategory] = useState('');
 
   var check = authenticationCheck();
 
@@ -30,7 +28,6 @@ const WorkoutModule = () => {
       // console.log(userWorkouts);
 
       getUserWorkouts().then((userWorkouts) => {
-        console.log(userWorkouts);
         setUserWorkouts(userWorkouts);
       });
     }

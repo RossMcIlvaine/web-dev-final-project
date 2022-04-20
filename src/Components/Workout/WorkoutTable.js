@@ -19,13 +19,7 @@ const style = {
 // displays all workouts currently in database
 const WorkoutTable = ({ workouts }) => {
 
-  // for modal
-  const [open, setOpen] = useState(false);
   const [filteredWorkouts, setFilteredWorkouts] = useState(workouts);
-
-  // for modal
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   // filter workouts by muscle group category
   const handleFilter = e => {
@@ -99,7 +93,6 @@ const WorkoutTable = ({ workouts }) => {
             <th>Name</th>
             <th>Category</th>
             <th>Exercises</th>
-            <th>Details</th>
         </tr>
 
         {filteredWorkouts
@@ -110,6 +103,7 @@ const WorkoutTable = ({ workouts }) => {
                 <td>{workout.get("name")}</td>
                 <td>{workout.get("muscleGroup")}</td>
                 <td>{workout.get("ex")}</td>
+                {/*}
                 <Button onClick={handleOpen}><td>View Workout</td></Button>
                 <Modal
                   open={open}
@@ -128,7 +122,7 @@ const WorkoutTable = ({ workouts }) => {
                       {workout.get("ex")}
                     </Typography>
                   </Box>
-                </Modal>
+        </Modal>*/}
             </tr>
             )}
         </table>
