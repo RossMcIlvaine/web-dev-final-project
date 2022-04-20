@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllWorkouts, getUserWorkouts } from "../../Common/Services/GetWorkout";
+import { addWorkout, getAllWorkouts, getUserWorkouts } from "../../Common/Services/WorkoutService";
 import Menubar from "../Menubar/Menubar";
 import WorkoutTable from "./WorkoutTable";
 import WorkoutForm from "./WorkoutForm";
@@ -27,15 +27,18 @@ const WorkoutModule = () => {
 
   useEffect(() => {
     if(check) {
-      // setUserWorkouts(getUserWorkouts());
-      // console.log(userWorkouts);
-
       getUserWorkouts().then((userWorkouts) => {
-        console.log(userWorkouts);
         setUserWorkouts(userWorkouts);
       });
     }
   }, [check]);
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log("submitted: ", e.target);
+    const data = new FormData(e.target);
+    addWorkout(data);
+  };
 
   if(check) {
     return (
@@ -62,7 +65,7 @@ const WorkoutModule = () => {
         </Box>
     </p>*/}
         <WorkoutTable workouts={userWorkouts}/>
-        <WorkoutForm/>
+        <WorkoutForm onSubmit={onSubmitHandler}/>
       </div>
     );
   }
