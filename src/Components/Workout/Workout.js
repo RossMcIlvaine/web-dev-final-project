@@ -3,11 +3,6 @@ import { addWorkout, getAllWorkouts, getUserWorkouts } from "../../Common/Servic
 import Menubar from "../Menubar/Menubar";
 import WorkoutTable from "./WorkoutTable";
 import WorkoutForm from "./WorkoutForm";
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import { authenticationCheck } from "../../Common/Services/AuthService";
 import { Link } from "react-router-dom";
 import '../../Common/css/workout.css';
@@ -20,16 +15,12 @@ const WorkoutModule = () => {
 
   var check = authenticationCheck();
 
-  const handleChange = (event) => {
-    setCategory(event.target.value);
-    setFilterOn(true);
-  };
-
   // call getAllWorkouts from service 
   useEffect(() => {
     if(check) {
       getAllWorkouts().then((workouts) => {
         setWorkouts(workouts);
+        console.log(workouts)
       });
     }
   }, [check]);

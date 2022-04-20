@@ -19,19 +19,11 @@ const workoutForm = ({onSubmit}) => {
           <option id="legs" value="Lower Body">Lower Body</option>
           <option id="core" vale="Core">Core</option>
         </select>
-        <p class="subheader">Units</p>
-        <div>
-          <input type="radio" id="seconds" name="units" value="seconds"/>
-          <label class="subtext" for="seconds"> Seconds</label>
-          <br />
-          <input type="radio" id="reps" name="units" value="reps"/>
-          <label class="subtext" for="reps"> Reps</label>
+        <div class="inline">
+          <p class="subheader">Exercises:</p>
+          <input class="inputText" type="text" placeholder="Excercise"></input>
+          <button class="button">Add Excercise</button>
         </div>
-        <p class="subheader">Exercises:</p>
-        <input class="inputText" type="text" placeholder="Excercise"></input>
-        <br/>
-        <br/>
-        <button class="button">Add Excercise</button>
         <br/>
         <br/>
         <button class="button" type="submit">Add Workout</button>
