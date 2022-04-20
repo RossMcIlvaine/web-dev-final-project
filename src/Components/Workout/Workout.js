@@ -10,8 +10,6 @@ import '../../Common/css/workout.css';
 const WorkoutModule = () => {
   const [workouts, setWorkouts] = useState([]);
   const [userWorkouts, setUserWorkouts] = useState([]);
-  const [filterOn, setFilterOn] = useState(false);
-  const [category, setCategory] = useState('');
 
   var check = authenticationCheck();
 
@@ -20,7 +18,6 @@ const WorkoutModule = () => {
     if(check) {
       getAllWorkouts().then((workouts) => {
         setWorkouts(workouts);
-        console.log(workouts)
       });
     }
   }, [check]);
@@ -44,26 +41,6 @@ const WorkoutModule = () => {
     return (
       <div>
         <Menubar/>
-        {/*
-        <p class="filter">
-        <Box sx={{ minWidth: 120 }}>
-          <FormControl sx={{ minWidth: 150 }}>
-            <InputLabel id="demo-simple-select-label">Filter</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={category}
-              label="Filter"
-              onChange={handleChange}
-            >
-              <MenuItem value={10}>Full Body</MenuItem>
-              <MenuItem value={20}>Upper Body</MenuItem>
-              <MenuItem value={30}>Lower Body</MenuItem>
-              <MenuItem value={40}>Core</MenuItem>
-            </Select>
-          </FormControl>
-        </Box>
-    </p>*/}
         <WorkoutTable workouts={userWorkouts}/>
         <WorkoutForm onSubmit={onSubmitHandler}/>
       </div>
