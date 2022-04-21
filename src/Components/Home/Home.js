@@ -38,7 +38,7 @@ const Home = () => {
         });
         getAllNews().then((news) => {
           setNews(news);
-        })
+        });
       }
     }, [check]);
 
@@ -77,7 +77,7 @@ const Home = () => {
         // Reset remove state variable
         setRemoveAnnouncement("");
       }
-    }, [news, removeNews, removeEvent, removeAnnouncement]);
+    }, [news, announcements, events, removeNews, removeEvent, removeAnnouncement]);
 
     if(check) {
       return (
