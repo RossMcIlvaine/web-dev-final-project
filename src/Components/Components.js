@@ -1,8 +1,6 @@
 import React from "react";
 import Login from "./Auth/AuthLogin";
 import Register from "./Auth/AuthRegister";
-import ExerciseModule from "./Exercise/Exercise";
-import ExerciseAuthModule from "./Exercise/ExerciseAuth";
 import WorkoutModule from "./Workout/Workout";
 import WorkoutAuthModule from "./Workout/WorkoutAuth";
 import AuthModule from "./Auth/Auth.js";
@@ -31,12 +29,10 @@ const Components = () => {
           {/* These routes are used after authentication, sends user to their personal app display */}
           <Route path="/:username/home" component={Home}/>
           <Route path="/:username/workouts" component={WorkoutModule} />
-          <Route path="/:username/exercises" component={ExerciseModule} />
           <Route path="/:username/profile" component={ProfileModule} />
           <Route path="/:username/profile-edit" component={EditProfileForm} />
           <Route path="/home" component={HomeAuthModule}/>
           <Route path="/workouts" component={WorkoutAuthModule} />
-          <Route path="/exercises" component={ExerciseAuthModule} />
           <Route path="/profile" component={ProfileAuthModule} />
           <Route path="/profile-edit" component={EditProfileAuthModule} />
           <Route path="/login" component={Login} />
