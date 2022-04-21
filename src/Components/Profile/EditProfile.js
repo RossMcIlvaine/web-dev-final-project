@@ -17,8 +17,8 @@ const ProfileModule = () => {
     var check = authenticationCheck();
     let profile = Parse.User.current();
 
-    const swapMode = () => {
-      history.push("/profile/edit");
+    const saveProfile = () => {
+      history.push("/profile");
     }
 
     if(check) {
@@ -26,13 +26,7 @@ const ProfileModule = () => {
             <ThemeProvider theme={theme}>
                 <div>
                     <Menubar/>
-                    <h1 class="header">My Profile</h1>
-                    <h2>First Name: {profile.get("firstName")}</h2>
-                    <h2>Last Name: {profile.get("lastName")}</h2>
-                    <h2>Username: {profile.get("username")}</h2>
-                    <h2>Email: {profile.get("email")}</h2>
-                    <h2>Account Created: {profile.get("createdAt").toDateString()}</h2>
-                    <button type='button' onClick={swapMode}>Edit Profile</button>
+                    <button type='button' onClick={saveProfile}>Save Profile</button>
                 </div>
             </ThemeProvider>
         );
