@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Menubar from "../Menubar/Menubar";
 import { authenticationCheck } from "../../Common/Services/AuthService";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import '../../Common/css/workout.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Parse from "parse";
@@ -13,8 +13,13 @@ const theme = createTheme({
 });
 
 const ProfileModule = () => {
+    const history = useHistory();
     var check = authenticationCheck();
     let profile = Parse.User.current();
+
+    const swapMode = () => {
+      history.push("/User/profile-edit");
+    }
 
     if(check) {
         return (
@@ -26,6 +31,8 @@ const ProfileModule = () => {
                     <h2>Last Name: {profile.get("lastName")}</h2>
                     <h2>Username: {profile.get("username")}</h2>
                     <h2>Email: {profile.get("email")}</h2>
+                    <h2>Account Created: {profile.get("createdAt").toDateString()}</h2>
+                    <button type='button' onClick={swapMode}>Edit Profile</button>
                 </div>
             </ThemeProvider>
         );
