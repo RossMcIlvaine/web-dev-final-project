@@ -45,7 +45,6 @@ const Home = () => {
     useEffect(() => {
       // get announcements, events, and news from database
       if (removeNews.length > 0) {
-        //Filter the old lessons list to take out selected lesson
         const newNews = news.filter((newsitem) => newsitem.id !== removeNews);
         setNews(newNews);
   
@@ -56,7 +55,6 @@ const Home = () => {
         setRemoveNews("");
       }
       if (removeEvent.length > 0) {
-        //Filter the old lessons list to take out selected lesson
         const newEvent = events.filter((event) => event.id !== removeEvent);
         setEvents(newEvent);
   
@@ -67,7 +65,6 @@ const Home = () => {
         setRemoveEvent("");
       }
       if (removeAnnouncement.length > 0) {
-        //Filter the old lessons list to take out selected lesson
         const newAnnouncement = announcements.filter((ann) => ann.id !== removeAnnouncement);
         setAnnouncements(newAnnouncement);
   

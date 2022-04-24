@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { addWorkout, getAllWorkouts, getUserWorkouts } from "../../Common/Services/WorkoutService";
+import { addWorkout, deleteWorkout, getAllWorkouts, getUserWorkouts } from "../../Common/Services/WorkoutService";
 import Menubar from "../Menubar/Menubar";
 import WorkoutTable from "./WorkoutTable";
 import WorkoutForm from "./WorkoutForm";
 import { authenticationCheck } from "../../Common/Services/AuthService";
 import { Link } from "react-router-dom";
+import { adminCheck } from "../../Common/Services/AuthService";
 import '../../Common/css/workout.css';
 
 const WorkoutModule = () => {
   const [workouts, setWorkouts] = useState([]);
+  const [removeWorkout, setRemoveWorkout] = useState("");
   const [userWorkouts, setUserWorkouts] = useState([]);
 
   var check = authenticationCheck();
+  var isAdmin = adminCheck();
 
   // call getAllWorkouts from service 
   useEffect(() => {
@@ -30,6 +33,20 @@ const WorkoutModule = () => {
     }
   }, [check]);
 
+  useEffect(() => {
+    if (removeWorkout.length > 0) {
+      //Filter the old lessons list to take out selected lesson
+      const newWorkouts = userWorkouts.filter((workout) => workout.id !== removeWorkout);
+      setUserWorkouts(newWorkouts);
+
+      deleteWorkout(removeWorkout).then(() => {
+        console.log("Removed workout with ID: ", removeWorkout);
+      });
+      // Reset remove state variable
+      setRemoveWorkout("");
+    }
+  }, [userWorkouts, removeWorkout]);
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
     console.log("submitted: ", e.target);
@@ -41,7 +58,7 @@ const WorkoutModule = () => {
     return (
       <div>
         <Menubar/>
-        <WorkoutTable workouts={userWorkouts}/>
+        <WorkoutTable workouts={userWorkouts} isAdmin={isAdmin} setRemove={setRemoveWorkout}/>
         <WorkoutForm onSubmit={onSubmitHandler}/>
       </div>
     );

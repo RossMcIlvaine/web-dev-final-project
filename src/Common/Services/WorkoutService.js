@@ -57,13 +57,29 @@ export const addWorkout = (data) => {
 
 export const printExercises = (exercises) => {
   var newString = '';
-  for(let i = 0; i < exercises.length; i++) {
-    if((i+1) == exercises.length) {
-      newString += exercises[i];
-    }
-    else {
-      newString += exercises[i] + ', ';
+  if(exercises) {
+    for(let i = 0; i < exercises.length; i++) {
+      if((i+1) === exercises.length) {
+        newString += exercises[i];
+      }
+      else {
+        newString += exercises[i] + ', ';
+      }
     }
   }
+  else {
+    newString = 'No exercises entered yet!';
+  }
   return newString;
+};
+
+export const deleteWorkout = (objectId) => {
+  const Workout = Parse.Object.extend("Workout");
+  const query = new Parse.Query(Workout);
+  return query.get(objectId).then((workout) => {
+    workout.destroy();
+  })
+  .catch((error) => {
+    alert(`Error: ${error.message}`);
+  });
 };

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@mui/material';
 import { printExercises } from '../../Common/Services/WorkoutService';
+import { deleteWorkout } from '../../Common/Services/WorkoutService';
 
 const style = {
   position: 'absolute',
@@ -17,7 +17,7 @@ const style = {
 };
 
 // displays all workouts currently in database
-const WorkoutTable = ({ workouts }) => {
+const WorkoutTable = ({ workouts, isAdmin, setRemove }) => {
 
   const [filteredWorkouts, setFilteredWorkouts] = useState(workouts);
 
@@ -73,7 +73,53 @@ const WorkoutTable = ({ workouts }) => {
     setFilteredWorkouts(workouts);
   }, [workouts])
 
-  return (
+  if(isAdmin) {
+    return (
+      <div>
+        <h1 class="header">My Workouts</h1>
+        <select
+            class="select"
+            onChange={handleFilter}
+          >
+            <option value="All">All</option>
+            <option value="Full Body">Full Body</option>
+            <option value="Upper Body">Upper Body</option>
+            <option value="Lower Body">Lower Body</option>
+            <option value="Core">Core</option>
+          </select>
+        <table id="workouts">
+          
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Exercises</th>
+            <th>Workout Details</th>
+            <th></th>
+        </tr>
+
+        {filteredWorkouts
+          .map(
+              (workout) =>
+              <tr key={workout} style={{height: "70px"}}>
+                  <td style={{width: "15%"}}>{workout.get("name")}</td>
+                  <td style={{width: "15%"}}>{workout.get("muscleGroup")}</td>
+                  <td>{printExercises(workout.get("exercises"))}</td>
+                  <td style={{width: "10%"}}>
+                    <a class="link" target="_blank" href={workout.get("image")}>View Workout</a>
+                  </td>
+                  <td>
+                    <Button onClick={() => {deleteWorkout(workout.id); setRemove(workout.id)}}>
+                        <DeleteIcon />
+                    </Button>
+                  </td>
+              </tr>
+              )}
+          </table>
+      </div>
+    );
+  }
+  else {
+    return (
       <div>
         <h1 class="header">My Workouts</h1>
         <select
@@ -96,20 +142,21 @@ const WorkoutTable = ({ workouts }) => {
         </tr>
 
         {filteredWorkouts
-        .map(
-            (workout) =>
-            <tr key={workout} style={{height: "70px"}}>
-                <td style={{width: "15%"}}>{workout.get("name")}</td>
-                <td style={{width: "15%"}}>{workout.get("muscleGroup")}</td>
-                <td>{printExercises(workout.get("exercises"))}</td>
-                <td style={{width: "10%"}}>
-                  <a class="link" target="_blank" href={workout.get("image")}>View Workout</a>
-                </td>
-            </tr>
-            )}
-        </table>
-    </div>
-  );
+          .map(
+              (workout) =>
+              <tr key={workout} style={{height: "70px"}}>
+                  <td style={{width: "15%"}}>{workout.get("name")}</td>
+                  <td style={{width: "15%"}}>{workout.get("muscleGroup")}</td>
+                  <td>{printExercises(workout.get("exercises"))}</td>
+                  <td style={{width: "10%"}}>
+                    <a class="link" target="_blank" href={workout.get("image")}>View Workout</a>
+                  </td>
+              </tr>
+              )}
+          </table>
+      </div>
+    );
+  }
 }
 
 export default WorkoutTable;
