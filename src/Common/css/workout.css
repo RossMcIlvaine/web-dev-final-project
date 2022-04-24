@@ -174,3 +174,16 @@ input[type="checkbox"] {
   margin-bottom: 15px;
   margin-left: 1413px;
 }
+
+.link {
+  color: white;
+  background-color: #fcba03;
+  padding: 7px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.required {
+  font-size: 13px;
+}

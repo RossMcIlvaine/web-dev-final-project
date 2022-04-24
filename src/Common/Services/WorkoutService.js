@@ -54,3 +54,16 @@ export const addWorkout = (data) => {
     return false;
   };
 }
+
+export const printExercises = (exercises) => {
+  var newString = '';
+  for(let i = 0; i < exercises.length; i++) {
+    if((i+1) == exercises.length) {
+      newString += exercises[i];
+    }
+    else {
+      newString += exercises[i] + ', ';
+    }
+  }
+  return newString;
+};

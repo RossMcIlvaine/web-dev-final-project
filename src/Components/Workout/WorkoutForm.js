@@ -10,9 +10,9 @@ const workoutForm = ({onSubmit}) => {
       <div class="collapsible-content">
         <div class="content-inner">
         <form onSubmit={onSubmit}>
-        <p class="subheader">Workout Name</p>
+        <p class="subheader">Workout Name*</p>
         <input type="text" id="workoutName" placeholder="Workout Name" class="inputText" name="workoutName"></input>
-        <p class="subheader">Muscle Group</p>
+        <p class="subheader">Muscle Group*</p>
         <select id="focus" name="focus">
           <option id="full" value="Full Body">Full Body</option>
           <option id="arms" value="Upper Body">Upper Body</option>
@@ -24,9 +24,12 @@ const workoutForm = ({onSubmit}) => {
           <input class="inputText" type="text" placeholder="Excercise"></input>
           <button class="button">Add Excercise</button>
         </div>
+        <p class="subheader">Link to Full Workout</p>
+        <input type="text" id="workoutLink" placeholder="Link" class="inputText" name="workoutLink"></input>
         <br/>
         <br/>
         <button class="button" type="submit">Add Workout</button>
+        <p class="required">* indicates required field</p>
       </form>
         </div>
       </div>

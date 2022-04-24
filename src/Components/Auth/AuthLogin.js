@@ -23,7 +23,7 @@ const AuthLogin = () => {
     if (add) {
       loginUser(existingUser).then((userLoggedIn) => {
         if (userLoggedIn) {
-          alert(`${userLoggedIn.get("username")}, you successfully logged in!`);
+          console.log(`${userLoggedIn.get("username")}, you successfully logged in!`);
         }
         setAdd(false);
       });

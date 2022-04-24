@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import { Button } from '@mui/material';
+import { printExercises } from '../../Common/Services/WorkoutService';
 
 const style = {
   position: 'absolute',
@@ -92,35 +92,19 @@ const WorkoutTable = ({ workouts }) => {
             <th>Name</th>
             <th>Category</th>
             <th>Exercises</th>
+            <th>Workout Details</th>
         </tr>
 
         {filteredWorkouts
         .map(
             (workout) =>
-            <tr key={workout}>
-                <td>{workout.get("name")}</td>
-                <td>{workout.get("muscleGroup")}</td>
-                <td>{workout.get("exercises")}</td>
-                {/*}
-                <Button onClick={handleOpen}><td>View Workout</td></Button>
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description"
-                  >
-                  <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h5" component="h2">
-                      {workout.get("name")}
-                    </Typography>
-                    <Typography id="modal-modal-title" variant="subtitle1" component="h2">
-                      {workout.get("muscleGroup")}
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                      {workout.get("ex")}
-                    </Typography>
-                  </Box>
-        </Modal>*/}
+            <tr key={workout} style={{height: "70px"}}>
+                <td style={{width: "15%"}}>{workout.get("name")}</td>
+                <td style={{width: "15%"}}>{workout.get("muscleGroup")}</td>
+                <td>{printExercises(workout.get("exercises"))}</td>
+                <td style={{width: "10%"}}>
+                  <a class="link" target="_blank" href={workout.get("image")}>View Workout</a>
+                </td>
             </tr>
             )}
         </table>

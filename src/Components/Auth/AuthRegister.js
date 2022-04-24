@@ -26,7 +26,7 @@ const AuthRegister = () => {
     if (newUser && add) {
       createUser(newUser).then((userCreated) => {
         if (userCreated) {
-          alert(
+          console.log(
             `${userCreated.get("firstName")}, you successfully registered!`
           );
         }
