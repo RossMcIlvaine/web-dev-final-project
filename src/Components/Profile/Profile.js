@@ -18,7 +18,7 @@ const ProfileModule = () => {
     let profile = Parse.User.current();
 
     const swapMode = () => {
-      history.push("/profile/edit");
+      history.push("/User/profile-edit");
     }
 
     if(check) {
