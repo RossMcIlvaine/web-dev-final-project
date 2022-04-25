@@ -17,6 +17,7 @@ const ProfileModule = () => {
     const history = useHistory();
     var check = authenticationCheck();
     let profile = Parse.User.current();
+    console.log(profile.get("isAdmin"));
     let isAdmin = profile.get("isAdmin");
 
     const swapMode = () => {

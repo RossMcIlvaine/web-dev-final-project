@@ -4,8 +4,8 @@ import Parse from 'parse';
 export function sendEmail (name, notes) {
     console.log("Sending emails");
 
-    const User = Parse.Object.extend("User");
-    const query = new Parse.Query(User);
+    const Email = Parse.Object.extend("Email");
+    const query = new Parse.Query(Email);
 
     query.find().then((results) => {
         results.forEach(result => {
