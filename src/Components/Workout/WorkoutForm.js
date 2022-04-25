@@ -20,9 +20,10 @@ const workoutForm = ({onSubmit}) => {
           <option id="core" vale="Core">Core</option>
         </select>
         <div class="inline">
-          <p class="subheader">Exercises:</p>
-          <input class="inputText" type="text" placeholder="Excercise"></input>
-          <button class="button">Add Excercise</button>
+          <p class="subheader">Exercises: Enter as comma separated list</p>
+          <input class="inputText" type="text" placeholder="Excercise" name="exercise"></input>
+          {/* Button would add new inputs so the user doesn't have to enter exercises as a list themselves
+            <button class="button">Add Excercise</button> */}
         </div>
         <p class="subheader">Link to Full Workout</p>
         <input type="text" id="workoutLink" placeholder="Link" class="inputText" name="workoutLink"></input>

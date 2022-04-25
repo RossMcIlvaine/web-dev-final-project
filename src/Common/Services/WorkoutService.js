@@ -28,6 +28,7 @@ export const addWorkout = (data) => {
   let Workout = new Parse.Object('Workout');
   Workout.set("name", data.get("workoutName"))
   Workout.set("muscleGroup", data.get("focus"));
+  Workout.set("exercises", [data.get("exercise")]);
 
   try {
     Workout.save().then(() => {
