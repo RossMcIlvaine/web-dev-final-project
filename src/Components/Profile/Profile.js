@@ -33,24 +33,24 @@ const ProfileModule = () => {
     if(check && isAdmin) {
       return (
         <ThemeProvider theme={theme}>
-            <div>
               <Menubar/>
-              <h1 class="header">My Profile</h1>
-              <h2>First Name: {profile.get("firstName")}</h2>
-              <h2>Last Name: {profile.get("lastName")}</h2>
-              <h2>Username: {profile.get("username")}</h2>
-              <h2>Email: {profile.get("email")}</h2>
-              <h2>Account Created: {profile.get("createdAt").toDateString()}</h2>
-              <button type='button' onClick={swapMode}>Edit Profile</button>
-            </div>
-            <p>Create Email</p>
-            <form class="email-form" onSubmit={emailButtonHandler}> 
-              <p>Message</p>
-              <input type="text" name="message"></input>
-              <p>Recipient Name</p>
-              <input type="text" name="recipient"></input>
-              <button type="submit" onSubmit={emailButtonHandler}>Send</button>
-            </form>
+              <div class="profile">
+                  <h1 class="header">My Profile</h1>
+                  <h2>First Name: {profile.get("firstName")}</h2>
+                  <h2>Last Name: {profile.get("lastName")}</h2>
+                  <h2>Username: {profile.get("username")}</h2>
+                  <h2>Email: {profile.get("email")}</h2>
+                  <h2>Account Created: {profile.get("createdAt").toDateString()}</h2>
+                  <button class="edit-button" type='button' onClick={swapMode}>Edit Profile</button>
+                <h3>Create Email</h3>
+                <form class="email-form" onSubmit={emailButtonHandler}> 
+                  <p>Message</p>
+                  <input type="text" name="message"></input>
+                  <p>Recipient Name</p>
+                  <input type="text" name="recipient"></input>
+                  <button class="edit-button" type="submit" onSubmit={emailButtonHandler}>Send</button>
+                </form>
+              </div>
         </ThemeProvider>
       );
     }
