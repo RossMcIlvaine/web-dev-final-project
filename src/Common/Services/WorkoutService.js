@@ -26,8 +26,9 @@ export const getUserWorkouts = () => {
 export const addWorkout = (data) => {
   // Create new workout and add values to it
   let Workout = new Parse.Object('Workout');
-  Workout.set("name", data.get("workoutName"))
+  Workout.set("name", data.get("workoutName"));
   Workout.set("muscleGroup", data.get("focus"));
+  Workout.set("image", data.get("workoutLink"));
 
   try {
     Workout.save().then(() => {
