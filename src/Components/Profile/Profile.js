@@ -1,6 +1,6 @@
 import React from "react";
 import Menubar from "../Menubar/Menubar";
-import { authenticationCheck } from "../../Common/Services/AuthService";
+import { authenticationCheck, adminCheck } from "../../Common/Services/AuthService";
 import { sendEmail } from "../../Common/Services/EmailService";
 import { Link, useHistory } from "react-router-dom";
 import '../../Common/css/workout.css';
@@ -16,9 +16,8 @@ const theme = createTheme({
 const ProfileModule = () => {
     const history = useHistory();
     var check = authenticationCheck();
+    var isAdmin = adminCheck();
     let profile = Parse.User.current();
-    console.log(profile.get("isAdmin"));
-    let isAdmin = profile.get("isAdmin");
 
     const swapMode = () => {
       history.push("/User/profile-edit");
@@ -28,6 +27,7 @@ const ProfileModule = () => {
       e.preventDefault();
       const data = new FormData(e.target);
       sendEmail(data.get("recipient"), data.get("message"));
+      alert("Emails Sent");
     }
 
     if(check && isAdmin) {
@@ -43,8 +43,11 @@ const ProfileModule = () => {
               <h2>Account Created: {profile.get("createdAt").toDateString()}</h2>
               <button type='button' onClick={swapMode}>Edit Profile</button>
             </div>
+            <p>Create Email</p>
             <form class="email-form" onSubmit={emailButtonHandler}> 
+              <p>Message</p>
               <input type="text" name="message"></input>
+              <p>Recipient Name</p>
               <input type="text" name="recipient"></input>
               <button type="submit" onSubmit={emailButtonHandler}>Send</button>
             </form>
