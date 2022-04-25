@@ -11,6 +11,14 @@ export const createUser = (newUser) => {
   user.set("email", newUser.email);
 
   console.log("User: ", user);
+
+  // Create a new email account when user is created (used for email service)
+  let EmailAcc = new Parse.Object('Email');
+  EmailAcc.set("email", newUser.email);
+  EmailAcc.set("firstName", newUser.firstName);
+  EmailAcc.set("lastName", newUser.lastName);
+  EmailAcc.save();
+
   return user
     .signUp()
     .then((newUserSaved) => {

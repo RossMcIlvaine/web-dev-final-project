@@ -14,22 +14,11 @@ export const getUserWorkouts = () => {
   // This function grabs the workouts object from the current user
 
   const User = Parse.User.current();
-
-  // console.log(User);
-
+  // Get workout relation and query
   const relation = User.relation("workouts");
-
-  // console.log(relation);
-
   const query = relation.query();
 
-  // console.log(query);
-
   return query.find().then((results) => {
-    // console.log(results);
-    // console.log(results[0]);
-    // console.log(results[0].get("name"));
-    // console.log(results[1]);
     return results;
   });
 };
