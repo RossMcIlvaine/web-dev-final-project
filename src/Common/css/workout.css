@@ -187,3 +187,16 @@ input[type="checkbox"] {
 .required {
   font-size: 13px;
 }
+
+.edit-button {
+  background-color: #213282;
+  color: white;
+  padding: 8px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  border: none;
+}
+
+.profile {
+  margin-left: 25px;
+}
