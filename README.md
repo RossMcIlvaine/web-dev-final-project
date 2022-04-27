@@ -9,13 +9,13 @@ Group Members: Ross McIlvaine and Maggie Farrell
 ## Feature 6 User Stories
 Ross:
 * Create a profile page that allows a user to view and edit their profile information
-* Incorporate a notification service to email users of important announcements/events
-* Allow users to add workouts and exercises to the database using the form
+* Incorporate a notification service to email users of important announcements/events (only admins can do this by completing the form on the profile page)
+* Allow users to add workouts and exercises to the database using the add workout form under the table
 
 Maggie:
 * Create admin and non-admin access (admins can delete data from the home page and also workouts from the workout table)
 * Create a home page that contains important announcements, news, and events for the club
-* Dynamically filter workouts in the table by muscle group
+* Dynamically filter workouts in the table by muscle group using the dropdown menu above the table
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
