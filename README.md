@@ -1,6 +1,11 @@
 # CSE 40693 - Modern Web Development Group Project: ND Boxing Portal
 Group Members: Ross McIlvaine and Maggie Farrell
 
+## Login instuctions:
+* Creating an account will automatically create a non-admin account and will also show no workouts in the workouts page (since workouts are specific to a certain user)
+* To test an admin account that has workouts, log in using the following credentials: (username: mfarrell, password: test)
+* To test a non-admin account that has workouts in the table, log in using the following credentials: (username: notadmin, password: notadmin)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
